@@ -88,7 +88,7 @@ function handleZervisMsg() {
 
     setTimeout(() => {
         if (chatStep === 0) {
-            appendChat("Hi! I'm Zervis. This platform is created by Sudipta Manna. I'm your Vadodara property expert. What's your name?", "bot-msg");
+            appendChat("Hi! I'm Zervis. I'm your Vadodara property expert. What's your name?", "bot-msg");
             chatStep = 1;
         } else if (chatStep === 1) {
             appendChat(`Nice to meet you, ${msg}! What's your budget for a home in Vadodara?`, "bot-msg");
