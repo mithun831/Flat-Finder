@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlatFinder Vadodara | Zervis AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Flat<span>Finder</span> <small>Vadodara</small></div>
+        <button class="wishlist-btn" onclick="toggleSavedSidebar()">
+            <i class="fa-solid fa-heart"></i> Saved (<span id="saveBadge">0</span>)
+        </button>
+    </nav>
+
+    <section class="filter-section">
+        <div class="filter-container">
+            <div class="filter-group">
+                <label>BHK Type</label>
+                <select id="bhkFilter" onchange="filterFlats()">
+                    <option value="all">All BHKs</option>
+                    <option value="1">1 BHK</option>
+                    <option value="2">2 BHK</option>
+                    <option value="3">3 BHK</option>
+                    <option value="4">4 BHK</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Max Budget (₹)</label>
+                <select id="budgetFilter" onchange="filterFlats()">
+                    <option value="1000000">Any Price</option>
+                    <option value="15000">Under 15k</option>
+                    <option value="25000">Under 25k</option>
+                    <option value="50000">Under 50k</option>
+                </select>
+            </div>
+            <div class="search-info">
+                <p><i class="fa-solid fa-location-dot"></i> Real Properties in Vadodara</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="flat-grid" id="flatGrid"></div>
+    </main>
+
+    <div id="savedSidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>My Wishlist</h3>
+            <button onclick="toggleSavedSidebar()">×</button>
+        </div>
+        <div id="savedItemsList"></div>
+    </div>
+
+    <div class="bot-container">
+        <div id="chatWindow" class="chat-window hidden">
+            <div class="chat-top">
+                <div class="bot-info">
+                    <div class="online-indicator"></div>
+                    <span>Zervis AI</span>
+                </div>
+                <button onclick="toggleChat()">×</button>
+            </div>
+            <div id="chatBody" class="chat-body"></div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type 'Hi'...">
+                <button onclick="handleZervisMsg()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button class="bot-trigger" onclick="toggleChat()">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
